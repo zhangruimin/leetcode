@@ -47,5 +47,7 @@ public class L20170326_NextPermutation {
         for(int i = 0; i < half; i++){
             switchPosition(nums, start + i, nums.length - 1 - i);
         }
+
+        String s = new StringBuffer(234).reverse().toString();
     }
 }
