@@ -1,14 +1,16 @@
 /**
  * Created by zrruimin on 3/26/17.
  */
-public class NextPermutation {
+public class L20170326_NextPermutation {
     public static void main(String[] args) {
-        NextPermutation nextPermutation = new NextPermutation();
+        L20170326_NextPermutation nextPermutation = new L20170326_NextPermutation();
         int[] nums = {5, 6, 9, 7, 4, 3};
         nextPermutation.nextPermutation(nums);
         System.out.print(nums);
 
     }
+
+
     public void nextPermutation(int[] nums) {
         int current = nums.length -1;
         while(current > 0){
