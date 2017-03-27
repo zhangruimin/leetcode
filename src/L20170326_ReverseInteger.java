@@ -1,4 +1,6 @@
 /**
+ * https://leetcode.com/problems/reverse-integer/#/description
+ * Treat overflow in a smart way
  * Created by zrruimin on 3/26/17.
  */
 public class L20170326_ReverseInteger {
@@ -16,6 +18,7 @@ public class L20170326_ReverseInteger {
             int tail = x % 10;
             x = x / 10;
             int next  = result * 10 + tail;
+            // Treat overflow in a smart way
             if((next - tail) / 10 != result){
                 return 0;
             }

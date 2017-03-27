@@ -1,4 +1,5 @@
 /**
+ * https://leetcode.com/problems/next-permutation/#/description
  * Created by zrruimin on 3/26/17.
  */
 public class L20170326_NextPermutation {
