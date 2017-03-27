@@ -22,10 +22,6 @@ public class L20170327_Container_With_Most_Water {
                 right--;
             }
         }
-
-        for (int i = 0; i < ; i++) {
-            
-        }
         return max;
     }
 }
