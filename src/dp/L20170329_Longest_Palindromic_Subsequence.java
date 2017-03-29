@@ -21,11 +21,12 @@ public class L20170329_Longest_Palindromic_Subsequence {
         }
 
         for (int span = 1; span < length; span++) {
-            for (int i = 0; i + span < length; i++) {
-                if (s.charAt(i) == s.charAt(i + span)) {
-                    dp[i][i + span] = dp[i + 1][i + span - 1] + 2;
+            for (int left = 0; left + span < length; left++) {
+                int right = left + span;
+                if (s.charAt(left) == s.charAt(right)) {
+                    dp[left][right] = dp[left + 1][right - 1] + 2;
                 } else {
-                    dp[i][i + span] = Math.max(dp[i][i + span - 1], dp[i + 1][i + span]);
+                    dp[left][right] = Math.max(dp[left][right - 1], dp[left + 1][right]);
                 }
             }
         }
