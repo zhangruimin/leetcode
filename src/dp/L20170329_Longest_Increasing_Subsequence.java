@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 /**
  * https://leetcode.com/problems/longest-increasing-subsequence/#/description
+ *
+ * DP[i] records the length of the longest increasing sequence ended with nums[i]
  * Created by zrruimin on 3/26/17.
  */
 public class L20170329_Longest_Increasing_Subsequence {
