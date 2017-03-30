@@ -31,7 +31,7 @@ public class L20170330_Partition_Equal_Subset_Sum {
 
     private int sum(int[] nums) {
         int sum = 0;
-        for (int n: nums) {
+        for (int n : nums) {
             sum += n;
         }
         return sum;
