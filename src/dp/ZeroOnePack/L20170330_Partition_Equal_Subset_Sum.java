@@ -1,4 +1,4 @@
-package dp;
+package dp.ZeroOnePack;
 
 /**
  * https://leetcode.com/problems/partition-equal-subset-sum/#/description
