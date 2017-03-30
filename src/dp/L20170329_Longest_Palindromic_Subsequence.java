@@ -1,6 +1,7 @@
 package dp;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * https://leetcode.com/problems/longest-palindromic-subsequence/#/description
@@ -32,7 +33,7 @@ public class L20170329_Longest_Palindromic_Subsequence {
                 }
             }
         }
-        ArrayList<Integer> integers = new ArrayList<>();
+
         return dp[0][length - 1];
     }
 }
