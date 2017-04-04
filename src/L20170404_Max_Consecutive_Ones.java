@@ -17,7 +17,6 @@ public class L20170404_Max_Consecutive_Ones {
         max = Math.max(max, currentMax);
 
         return max;
-
     }
 }
 
