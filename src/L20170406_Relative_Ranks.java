@@ -1,13 +1,12 @@
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Stack;
+import java.util.*;
+
+import static java.util.Comparator.comparing;
 
 /**
  * https://leetcode.com/problems/next-greater-element-i/#/description
  */
 public class L20170406_Relative_Ranks {
     public String[] findRelativeRanks(int[] nums) {
-
         String[] result = new String[nums.length];
         for (int i = 0; i < nums.length; i++) {
             int num = nums[i];
