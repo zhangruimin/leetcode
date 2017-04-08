@@ -6,39 +6,50 @@ import java.util.List;
  * https://leetcode.com/problems/largest-divisible-subset/#/description
  */
 public class L20170408_Largest_Divisible_Subset {
+    public static void main(String[] args) {
+        List<Integer> integers = new L20170408_Largest_Divisible_Subset().largestDivisibleSubset(new int[]{1, 2});
+    }
     public List<Integer> largestDivisibleSubset(int[] nums) {
         if (nums.length < 1) {
             return new ArrayList<>();
         }
+
+        int length = nums.length;
+        int[] count = new int[length];
+        int[] previous = new int[length];
+
+        count[0] = 1;
+        previous[0] = -1;
         Arrays.sort(nums);
 
-        Object[] lists = new Object[nums.length];
-
-        List<Integer> first = Arrays.asList(nums[0]);
-        lists[0] = first;
         for (int i = 1; i < nums.length; i++) {
-            List<Integer> current = Arrays.asList(nums[i]);
-            lists[i] = current;
+            count[i] = 1;
+            previous[i] = -1;
             for (int j = 0; j < i; j++) {
-                List<Integer> listj = (List<Integer>) lists[j];
-                List<Integer> listi = (List<Integer>) lists[i];
-                if (nums[i] % nums[j] == 0 && listj.size() + 1 > listi.size()) {
-                    listi = new ArrayList<>(listj);
-                    listi.add(nums[i]);
+                if (nums[i] % nums[j] == 0 && count[j] + 1 > count[i]) {
+                    count[i] = count[j] + 1;
+                    previous[i] = j;
                 }
             }
         }
 
-        List<Integer> max = first;
-
-        for (Object list : lists) {
-            List<Integer> c = (List<Integer>) list;
-            if (c.size() > max.size()) {
-                max = c;
+        int maxIndex = 0;
+        int maxNum = 0;
+        for (int i = 0; i < count.length; i++) {
+            if (count[i] > maxNum) {
+                maxNum = count[i];
+                maxIndex = i;
             }
         }
 
-        return max;
+        ArrayList<Integer> result = new ArrayList<>();
+
+        for (int i = maxIndex; i != -1; i = previous[i]) {
+            result.add(nums[i]);
+        }
+
+
+        return result;
     }
 }
 
