@@ -18,6 +18,7 @@ public class L20170411_Third_Maximum_Number {
             if (set.contains(nums[i])) {
                 continue;
             }
+            set.add(nums[i]);
             queue.offer(nums[i]);
             if (queue.size() > 3) {
                 queue.poll();
