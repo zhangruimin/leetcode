@@ -46,5 +46,30 @@ public class L20170411_Course_Schedule {
         }
         return result;
     }
+
+    public boolean canFinish2(int numCourses, int[][] prerequisites) {
+
+        int[] dependencies = new int[numCourses];
+        for (int[] prerequisite : prerequisites) {
+            dependencies[prerequisite[0]]++;
+        }
+
+        int count = 0;
+        Queue<Integer> readyToTake = getReadyToTake(dependencies);
+        while (!readyToTake.isEmpty()) {
+            count++;
+            int course = readyToTake.poll();
+            for (int[] prerequisite : prerequisites) {
+                if (prerequisite[1] == course) {
+                    dependencies[prerequisite[0]]--;
+                    if (dependencies[prerequisite[0]] == 0) {
+                        readyToTake.offer(prerequisite[0]);
+                    }
+                }
+            }
+        }
+
+        return numCourses == count;
+    }
 }
 
