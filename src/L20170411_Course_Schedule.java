@@ -40,7 +40,7 @@ public class L20170411_Course_Schedule {
         Queue<Integer> result = new LinkedList<>();
         for (int i = 0; i < dependencies.length; i++) {
             if (dependencies[i] == 0) {
-                result.add(i);
+                result.offer(i);
             }
         }
         return result;
