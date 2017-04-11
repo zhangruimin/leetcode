@@ -1,12 +1,13 @@
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 /**
  * https://leetcode.com/problems/course-schedule/#/description
  */
 public class L20170411_Course_Schedule {
     public static void main(String[] args) {
-        new L20170411_Course_Schedule().canFinish(2, new int[0][2]);
+        new L20170411_Course_Schedule().canFinish(2, new int[][]{{0,1}});
     }
 
     public boolean canFinish(int numCourses, int[][] prerequisites) {
@@ -16,7 +17,7 @@ public class L20170411_Course_Schedule {
 
         for (int[] prerequisite : prerequisites) {
             indegree[prerequisite[0]]++;
-            matrix[prerequisite[1]][prerequisite[0]] = 1;
+            matrix[prerequisite[0]][prerequisite[1]] = 1;
         }
 
         int count = 0;
@@ -25,7 +26,7 @@ public class L20170411_Course_Schedule {
             count++;
             int course = readyToTake.poll();
             for (int i = 0; i < numCourses; i++) {
-                if (matrix[course][i] == 1) {
+                if (matrix[i][course] == 1) {
                     if (--indegree[i] == 0) {
                         readyToTake.offer(i);
                     }
@@ -37,7 +38,7 @@ public class L20170411_Course_Schedule {
     }
 
     private Queue<Integer> getReadyToTake(int[] dependencies) {
-        Queue<Integer> result = new LinkedList<>();
+        LinkedList<Integer> result = new LinkedList<>();
         for (int i = 0; i < dependencies.length; i++) {
             if (dependencies[i] == 0) {
                 result.offer(i);
