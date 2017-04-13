@@ -1,5 +1,4 @@
 import java.util.PriorityQueue;
-import java.util.Random;
 
 /**
  * https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/#/description
