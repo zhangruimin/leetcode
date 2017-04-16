@@ -3,14 +3,14 @@ import java.util.Map;
 
 /**
  */
-public class Trie {
+public class L2017041604_208_Implement_Trie {
 
     private final Map<Character, Node> nodes;
 
     /**
      * Initialize your data structure here.
      */
-    public Trie() {
+    public L2017041604_208_Implement_Trie() {
         nodes = new HashMap<>();
     }
 
@@ -21,7 +21,7 @@ public class Trie {
         Map<Character, Node> children = nodes;
         char[] chars = word.toCharArray();
         for (int i = 0; i < chars.length; i++) {
-            Node currentNode = children.getOrDefault(chars[i], new Node(chars[i]));
+            Node currentNode = children.getOrDefault(chars[i], new Node());
             if (i == chars.length - 1) {
                 currentNode.isLeaf = true;
             }
@@ -69,26 +69,7 @@ public class Trie {
 }
 
 class Node {
-    public Node(char val) {
-        this.val = val;
-    }
-    char val;
     boolean isLeaf;
     Map<Character, Node> children = new HashMap<>();
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Node node = (Node) o;
-
-        return val == node.val;
-    }
-
-    @Override
-    public int hashCode() {
-        return (int) val;
-    }
 }
 
