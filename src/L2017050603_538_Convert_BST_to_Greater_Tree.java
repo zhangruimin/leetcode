@@ -15,8 +15,8 @@ public class L2017050603_538_Convert_BST_to_Greater_Tree {
             return sum;
         }
         int rightSum = recursive(root.right, sum);
-        sum =rightSum+root.val;
-        root.val=sum;
+        sum = rightSum + root.val;
+        root.val = sum;
         return recursive(root.left, sum);
     }
 }
