@@ -19,8 +19,3 @@ public class L2017051702_283_Move_Zeroes {
         }
     }
 }
-
-
-
-
-
