@@ -14,11 +14,8 @@ public class L2017051802_278_First_Bad_Version {
                     left = mid + 1;
                 }
             }
-
             return left;
         }
-
-
     }
 
     class VersionControl {
