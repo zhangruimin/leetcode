@@ -1,6 +1,6 @@
 /**
  */
-public class L2017072501_59_Spiral_Matrix_II {
+public class L2017072501_60_Permutation_Sequence {
     public int[][] generateMatrix(int n) {
         if (n <= 0) {
             return new int[0][0];
