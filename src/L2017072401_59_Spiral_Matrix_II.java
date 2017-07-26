@@ -1,6 +1,8 @@
 /**
  */
 public class L2017072401_59_Spiral_Matrix_II {
+    public static void main(String[] args) {
+        System.out.println(String.format("ShippingPossibilities from SCEResponse FC %s EAD %s PickupDate %s", "a", "b"));    }
     public String getPermutation(int n, int k) {
         int[] nums = new int[n];
         for (int i = 0; i < n; i++) {
