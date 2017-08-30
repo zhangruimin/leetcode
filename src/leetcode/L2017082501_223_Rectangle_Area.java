@@ -1,3 +1,5 @@
+package leetcode;
+
 /**
  */
 public class L2017082501_223_Rectangle_Area {

@@ -1,3 +1,5 @@
+package leetcode;
+
 /**
  */
 public class L2017081601_306_Additive_Number {

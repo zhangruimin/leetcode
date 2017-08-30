@@ -1,3 +1,5 @@
+package leetcode;
+
 /**
  */
 public class L2017081402_396_Rotate_Function {

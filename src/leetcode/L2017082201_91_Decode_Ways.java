@@ -1,3 +1,5 @@
+package leetcode;
+
 /**
  */
 public class L2017082201_91_Decode_Ways {

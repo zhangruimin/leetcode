@@ -1,3 +1,5 @@
+package leetcode;
+
 /**
  */
 public class L2017082801_162_Find_Peak_Element {
