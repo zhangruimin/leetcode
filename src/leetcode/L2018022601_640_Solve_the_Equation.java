@@ -4,6 +4,7 @@ package leetcode;
  */
 public class L2018022601_640_Solve_the_Equation {
     public static void main(String[] args) {
+        System.out.println(Integer.parseInt("+2"));
         System.out.println(new L2018022601_640_Solve_the_Equation().solveEquation("-x=1"));
     }
 
